@@ -1,5 +1,6 @@
 Raspberry PI / pi hat lora dragino v1.4
 OS Raspbian Stretch
+(https://www.youtube.com/watch?v=Ya-QlEaonLU)
 git clone https://github.com/tftelkamp/single_chan_pkt_fwd
 Enable SPI
 sudo apt-get install wiringpi
