@@ -1,2 +1,36 @@
 Rapsberry Pi / pi Hat Dragino V1.4
 
+Dans le site Thing Network, déclarer dans setting, le capteur en paramètre ABD (pour avoir l'adresse serveur, ...)
+
+
+
+Lien : http://wiki.dragino.com/index.php?title=Use_Lora/GPS_HAT_%2B_RaspberryPi_to_set_up_a_Lora_Node
+In the LoRa Node side,the operations are as below:
+1.Wiring,you need to connect them by yourself.
+RPi -------------------- LoRa/GPS HAT
+WiringPi pin 4 -------------------- DIO1
+WiringPi pin 5 -------------------- DIO2
+2.Connect the LoRa/GPS HAT with the RaspberryPi,power it.
+3.Use 'git clone git://git.drogon.net/wiringPi' to install the GPIO access library written in C for the BCM2835 used in the Raspberry Pi.
+git clone git://git.drogon.net/wiringPi
+4.Get the LMIC source code from https://github.com/ernstdevreede/lmic_pi/archive/master.zip. Unzip the 'master.zip'.
+ unzip master.zip
+Enter the code file.
+ cd lmic_pi-master/examples/thethingsnetwork-send-v1
+Then edit the node_eui(DEVADDR) in thethingsnetwork-send-v1.cpp,
+ sudo nano thethingsnetwork-send-v1.cpp
+Make it and run thethingsnetwork-send-v1 as root.
+ make
+ sudo ./thethingsnetwork-send-v1
+ 
+ 
+ ATTENTION : 
+ Nous sommes dans un cas avec une seule fréquence d'utilisation.
+ Pensé dans le fichier config.h à définir le type de fréquence, pas US !!
+#define CFG_eu868 1
+//#define CFG_us915 1
+
+Dans la partie lorabas.h, il est possible de définir les fréquences (et de mettre la même partout) et aussi les fréquences min et max.
+
+Le programme plante souvent, à cause de radio.c
+Il faut définir ce qui se passe ................................
