@@ -1,0 +1,15 @@
+Raspberry PI / pi hat lora dragino v1.4
+OS Raspbian Stretch
+git clone https://github.com/tftelkamp/single_chan_pkt_fwd
+Enable SPI
+sudo apt-get install wiringpi
+cd ~/single_chan_pkt_fwd
+nano main.cpp
+Check the server Address !! (15/02/2019 : 52.169.76.203:1700)
+Check the pin connections
+Chek the frequency (One channel Gateway)
+Complete GPS locations
+make -B
+sudo ./single_chan_pkt_fwd
+
+--> Gateway is running
